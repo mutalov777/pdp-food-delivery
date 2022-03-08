@@ -20,8 +20,8 @@ public class CronJob {
     private final AuthUserRepository repository;
     private final PdpFoodDeliveryBot bot;
 
-//    @Scheduled(cron="0 0/30 8,9,10,18,19,20 ? * MON,TUE,WED,THU,FRI")
-    @Scheduled(cron="0/30 * * * * *")
+    @Scheduled(cron="0 0/30 8,9,10,18,19,20 ? * MON,TUE,WED,THU,FRI")
+//    @Scheduled(cron="0/30 * * * * *")
     private void chooseCronJob(){
        List<Long> list= repository.getUserIdByNoMealOrder().get();
         for (Long item : list) {
@@ -34,8 +34,8 @@ public class CronJob {
         }
     }
 
-//    @Scheduled(cron="0 0/30 12,13,14 ? * MON,TUE,WED,THU,FRI")
-@Scheduled(cron="0/30 * * * * *")
+    @Scheduled(cron="0 0/30 12,13,14 ? * MON,TUE,WED,THU,FRI")
+//@Scheduled(cron="0/30 * * * * *")
     private void getCronJob(){
         List<Long> list= repository.getUserIdByMealOrder().get();
         list.forEach(item->{

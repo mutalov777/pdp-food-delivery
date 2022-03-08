@@ -27,6 +27,7 @@ import uz.pdp.pdp_food_delivery.rest.mapper.auth.AuthUserMapper;
 import uz.pdp.pdp_food_delivery.rest.repository.auth.AuthUserRepository;
 import uz.pdp.pdp_food_delivery.rest.service.base.AbstractService;
 import uz.pdp.pdp_food_delivery.rest.service.base.GenericCrudService;
+import uz.pdp.pdp_food_delivery.rest.service.base.GenericService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -34,14 +35,13 @@ import java.io.IOException;
 import java.util.*;
 
 import static org.springframework.http.HttpHeaders.AUTHORIZATION;
+
 @Slf4j
 @Service
-public class AuthUserService extends AbstractService<AuthUserMapper, AuthUserRepository> implements   GenericCrudService<
-        AuthUser,
-        AuthUserDto,
+public class AuthUserService extends AbstractService<AuthUserMapper, AuthUserRepository> implements GenericCrudService<
         AuthUserCreateDto,
         AuthUserUpdateDto
-        >,UserDetailsService{
+        >, UserDetailsService, GenericService<AuthUserDto> {
 
     public AuthUserService(AuthUserMapper mapper, AuthUserRepository repository) {
         super(mapper, repository);

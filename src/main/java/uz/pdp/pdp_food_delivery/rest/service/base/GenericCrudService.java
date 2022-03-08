@@ -7,6 +7,7 @@ import uz.pdp.pdp_food_delivery.rest.dto.GenericDto;
 import uz.pdp.pdp_food_delivery.rest.entity.base.BaseEntity;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * @param <E>  -> Entity
@@ -15,10 +16,8 @@ import java.io.Serializable;
  * @param <UD> -> Update Dto
  */
 public interface GenericCrudService<
-        E extends BaseEntity,
-        D extends GenericDto,
         CD extends BaseDto,
-        UD extends GenericDto> extends GenericService<D> {
+        UD extends GenericDto> {
 
     Long create(CD createDto);
 

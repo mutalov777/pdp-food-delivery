@@ -1,6 +1,7 @@
 package uz.pdp.pdp_food_delivery.rest.service.mealorder;
 
 import org.springframework.stereotype.Service;
+import uz.pdp.pdp_food_delivery.rest.dto.meal.MealDto;
 import uz.pdp.pdp_food_delivery.rest.dto.mealorder.MealOrderCreateDto;
 import uz.pdp.pdp_food_delivery.rest.dto.mealorder.MealOrderDto;
 import uz.pdp.pdp_food_delivery.rest.dto.mealorder.MealOrderUpdateDto;
@@ -13,6 +14,7 @@ import uz.pdp.pdp_food_delivery.rest.repository.meal.MealRepository;
 import uz.pdp.pdp_food_delivery.rest.repository.mealorder.MealOrderRepository;
 import uz.pdp.pdp_food_delivery.rest.service.base.AbstractService;
 import uz.pdp.pdp_food_delivery.rest.service.base.GenericCrudService;
+import uz.pdp.pdp_food_delivery.rest.service.base.GenericService;
 
 import java.sql.Date;
 import java.time.LocalDateTime;
@@ -21,7 +23,7 @@ import java.util.Optional;
 
 @Service
 public class MealOrderService extends AbstractService<MealOrderMapper, MealOrderRepository>
-        implements GenericCrudService<MealOrder,MealOrderDto,MealOrderCreateDto, MealOrderUpdateDto> {
+        implements GenericCrudService<MealOrderCreateDto, MealOrderUpdateDto>, GenericService<MealOrderDto> {
 
     private final AuthUserRepository userRepository;
     private final MealRepository mealRepository;

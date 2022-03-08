@@ -27,7 +27,7 @@ import java.util.Optional;
 
 @Service
 public class MealService extends AbstractService<MealMapper, MealRepository>
-        implements GenericCrudService<Meal,MealDto,MealCreateDto, MealUpdateDto>, GenericService<MealDto>, BaseService {
+        implements GenericCrudService<MealCreateDto, MealUpdateDto>, GenericService<MealDto>, BaseService {
 
     private final UploadPhotoService uploadPhotoService;
     private final PdpFoodDeliveryBot bot;

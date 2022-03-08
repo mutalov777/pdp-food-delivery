@@ -36,6 +36,6 @@ public class PdpFoodDeliveryApplication {
                     passwordEncoder.encode("manager123"), Department.ACADEMIC.name(), Role.ADMIN.name()));
             userService.create(new AuthUserCreateDto("employee", "+998973130082", "Saydali2@gmail.com",
                     passwordEncoder.encode("employee123"), Department.ACADEMIC.name(), Role.ADMIN.name()));
-        };
+          };
     }
 }

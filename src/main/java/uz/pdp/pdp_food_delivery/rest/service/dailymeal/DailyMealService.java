@@ -19,10 +19,8 @@ import java.util.List;
 @Service
 public class DailyMealService extends AbstractService<
         DailyMealMapper, DailyMealRepository> implements GenericCrudService<
-        DailyMeal,
-        DailyMealDto,
         DailyMealCreateDto,
-        DailyMealUpdateDto>, GenericService<DailyMealDto> {
+        DailyMealUpdateDto>,GenericService<DailyMealDto> {
 
     public DailyMealService(DailyMealMapper mapper, DailyMealRepository repository) {
         super(mapper, repository);
